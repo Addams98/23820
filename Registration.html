@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<title>Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+<style>
+      body{
+              background-image:url('12.jpg');
+              background-size: cover;
+              background-repeat: no-repeat;
+            } 
+            .mb-3{
+             color: white;
+            } 
+    </style>
+</head>
+<body>
+<header>
+<div id="LoginBtn" align="right">
+            <button class="btn"><a class="Reg" href="Login.html"> <strong>Login</strong></a></button>
+            <i class="fas fa-user"></i>
+        </div>
+</header>
+  <h1 align="center" style="color: white;">Admission Page</h1>
+  <div class="loginFormContainer col-sm-5 m-auto border bg-success p-4 rounded mt-5" >
+     <form action="register.php" method="POST">
+        <div class="mb-3">
+            <label>First name</label>
+            <input class="w-100" type="text" name="FirstName" placeholder="First name">
+        </div>
+        <div class="mb-3">
+            <label>Last name</label>
+            <input class="w-100" type="text" name="LastName" placeholder="Last name">
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input class="w-100" type="email" name="email" placeholder="Email">
+        </div>
+        <div class="mb-3">
+            <label>Phone Number</label>
+            <input class="w-100" type="tel" name="tel" placeholder="tel">
+        </div>
+        <div class="mb-3">
+        <address>
+        <label>Address</label>
+            <input class="w-100" type="text" name="address" placeholder="Address">
+        </address>
+        </div>
+          <div class="mb-3" >
+           <label>Gender</label>
+          <select name="dropdwon" >
+             <option value="Male">Male</option>
+             <option value="Female">Female</option>
+             <option value="not specified">Not Specified</option>
+          </select>
+        </div>
+        <div class="mb-3">
+            <label for="birthdate">Date of Birth:</label>
+            <input class="w-100" type="date" name="birthdate">
+        </div>
+         <!--<div>
+         <label for="description"> Tell us about yourself</label>
+          <textarea rows="5" cols="50" name="description" >
+                  
+                </textarea>
+        </div> --> 
+        <div class="mb-3">
+            <label>Password name</label>
+            <input class="w-100" type="password" name="password" placeholder="Password">
+        </div>
+        <div class="mb-3">
+            <label>Confirm Password</label>
+            <input class="w-100" type="password" name="ConfirmPassword" placeholder="Confirm password">
+        </div>
+        
+        <div class="text-center">
+        <button class="btn border w-50 btn-outline-light">Register</button>
+        </div>
+    </form>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const registerForm = document.querySelector('form');
+
+        registerForm.addEventListener('submit', function (event) {
+            const firstName = document.querySelector('input[name="FirstName"]').value;
+            const lastName = document.querySelector('input[name="LastName"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const confirmPassword = document.querySelector('input[name="ConfirmPassword"]').value;
+            const birthdate = document.querySelector('input[name="birthdate"]').value;
+
+            if (
+                firstName === '' ||
+                lastName === '' ||
+                email === '' ||
+                password === '' ||
+                confirmPassword === '' ||
+                birthdate === ''
+            ) {
+                event.preventDefault(); // Prevent form submission
+                alert('Please fill in all the fields.');
+            } else if (password !== confirmPassword) { // Fixed the typo here
+                event.preventDefault();
+                alert('Passwords do not match');
+            }
+        });
+    });
+</script>
+
+    </div>
+    </body>
+</html>

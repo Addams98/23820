@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+     <style>
+      body{
+              background-image:url('1371392.jpg');
+              background-size: cover;
+              background-repeat: no-repeat;
+            }  
+            .mb-3{
+               color: white;
+            }
+    </style>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+<header>
+<div id="LoginBtn" align="right">
+            <button class="btn"><a class="Reg" href="Registration.html"><strong>Registration</strong></a></button>
+            <i class="fas fa-user"></i>
+        </div>
+</header>
+<div class="loginFormContainer col-sm-5 m-auto border bg-success p-4 rounded mt-5">
+    <form action="login" method="POST" onsubmit="return validateForm()">
+        <h3 align="center" style="color: white;">User Login</h3>
+        <div class="mb-3">
+            <label>Email</label>
+            <input class="w-100 p-1 rounded" type="email" name="email" id="email" placeholder="Email">
+        </div>
+        
+        <div class="mb-3">
+            <label>Password</label>
+            <input class="w-100 p-1 rounded" type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="text-center">
+            <button class="btn border w-50 btn-outline-light">Login</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (email === "" && password === "") {
+            alert(" Please fill  in all the field.");
+            return false; // Prevent form submission
+        }
+        
+        return true; // Allow form submission
+    }
+</script>
+  </div>
+</body>
+</html>
